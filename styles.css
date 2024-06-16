@@ -1,0 +1,226 @@
+/* styles.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #f4f4f4;
+    color: #333;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding-top: 100px; /* Padding to prevent overlap with fixed score-board */
+    padding-bottom: 60px; /* Padding to prevent overlap with fixed message-bar */
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.score-board {
+    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000; /* Ensures it stays on top of other elements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px; /* Added margin for spacing */
+}
+
+.team h2 {
+    font-size: 1.2em; /* Smaller font size */
+    margin: 0;
+}
+
+.score {
+    font-size: 2em; /* Smaller font size */
+    font-weight: bold;
+}
+
+.vs {
+    font-size: 1.5em; /* Smaller font size */
+    font-weight: bold;
+    margin: 0 20px; /* Added margin for spacing */
+}
+
+.stats-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px; /* Margin to prevent overlap with fixed score-board */
+}
+
+.stats {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+.stat {
+    flex: 1;
+    text-align: center;
+    font-size: 1.2em; /* Smaller font size */
+}
+
+.stat.central {
+    flex: 2;
+    color: #FFD700;  /* Highlight for the central stat */
+    font-weight: bold;
+}
+
+.stat.left, .stat.right {
+    color: #ccc;  /* Lighter color for numeric stats */
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.match-timeline, .voice-comments, .message-live-time {
+    flex: 1;
+    margin: 10px 0;
+    background: white;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.message-live-time {
+    overflow-y: auto;
+    max-height: 150px;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.message-live-time p {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.message-live-time ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.message.user1 {
+    background-color: #e6f7ff;
+    color: #005c99;
+}
+
+.message.user2 {
+    background-color: #ffebcc;
+    color: #b36b00;
+}
+
+.message.my-message {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    align-self: flex-end;
+    text-align: right;
+}
+
+.message:hover {
+    background-color: #d9d9d9;
+}
+
+.message-bar {
+    display: flex;
+    padding: 10px;
+    background: white;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.message-bar input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    margin-right: 10px;
+    border: 2px solid #008080;
+    border-radius: 5px;
+}
+
+.record-btn, .send-btn {
+    background-color: #FFA500;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.record-btn:hover, .send-btn:hover {
+    background-color: #cc8400;
+}
+
+.play-button {
+    background-color: #008080;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.play-button:hover {
+    background-color: #006060;
+}
+
+@media (max-width: 767px) {
+    .score-board {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .team {
+        margin: 5px 0; /* Adjust margin for smaller screens */
+    }
+
+    .vs {
+        margin: 10px 0; /* Adjust margin for smaller screens */
+    }
+
+    .stats-container, .stats {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .message-live-time {
+        max-height: 200px;
+    }
+}
