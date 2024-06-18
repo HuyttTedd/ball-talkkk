@@ -50,8 +50,6 @@ body, html {
     background: #28a745; /* Vibrant green background */
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
-    background: url('./public/soccer-board-8.jpg') no-repeat center center; /* Modern football-themed background */
-    background-size: cover;
 }
 
 .message-bar {
