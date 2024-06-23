@@ -7,32 +7,35 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="app-container">
-        <div class="score-board">
-            <div class="team team-a">
-                <h2>Team A</h2>
-                <div class="score">78</div>
-            </div>
-            <div class="vs">VS</div>
-            <div class="team team-b">
-                <h2>Team B</h2>
-                <div class="score">67</div>
-            </div>
+    <div class="wrapper">
+        <div class="ad left-ad">
+            <!-- Left Ad content here -->
         </div>
-        <div class="stats-container">
-            <div class="stats">
-                <div class="stat left">40</div>
-                <div class="stat central">Total Plays</div>
-                <div class="stat right">35</div>
+        <div class="app-container">
+            <div class="score-board">
+                <div class="team team-a">
+                    <h2>Team A</h2>
+                    <div class="score">78</div>
+                </div>
+                <div class="vs">VS</div>
+                <div class="team team-b">
+                    <h2>Team B</h2>
+                    <div class="score">67</div>
+                </div>
             </div>
-            <div class="stats">
-                <div class="stat left">15</div>
-                <div class="stat central">Rushing Plays</div>
-                <div class="stat right">14</div>
+            <div class="stats-container">
+                <div class="stats">
+                    <div class="stat left">40</div>
+                    <div class="stat central">Total Plays</div>
+                    <div class="stat right">35</div>
+                </div>
+                <div class="stats">
+                    <div class="stat left">15</div>
+                    <div class="stat central">Rushing Plays</div>
+                    <div class="stat right">14</div>
+                </div>
+                <!-- Additional stats can be structured similarly if needed -->
             </div>
-            <!-- Additional stats can be structured similarly if needed -->
-        </div>
-        <div class="main-content">
             <div class="match-timeline">
                 <p><strong>Timeline:</strong></p>
                 <ul>
@@ -59,11 +62,14 @@
                 <button class="play-button">Play Comment 1</button>
                 <button class="play-button">Play Comment 2</button>
             </div>
+            <div class="message-bar">
+                <input type="text" placeholder="Share your thoughts...">
+                <button class="record-btn">Record</button>
+                <button class="send-btn">Send</button>
+            </div>
         </div>
-        <div class="message-bar">
-            <input type="text" placeholder="Share your thoughts...">
-            <button class="record-btn">Record</button>
-            <button class="send-btn">Send</button>
+        <div class="ad right-ad">
+            <!-- Right Ad content here -->
         </div>
     </div>
 </body>

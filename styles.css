@@ -3,33 +3,62 @@ body, html {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif;
-    background: #f4f4f4;
-    color: #333;
+    background: #EAEDF0;
+    color: #184B29;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.ad {
+    flex: 0 0 100px; /* Fixed width for ads */
+    background-color: #ddd; /* Placeholder color for ads */
+    margin: 10px;
 }
 
 .app-container {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 150vh; /* Height set to 150vh */
     padding-top: 100px; /* Padding to prevent overlap with fixed score-board */
     padding-bottom: 60px; /* Padding to prevent overlap with fixed message-bar */
-    overflow-x: hidden; /* Prevent horizontal overflow */
+    background: #EAEDF0;
+    width: 100%; /* Default width */
+    margin: 0 auto; /* Center horizontally */
 }
 
-.score-board {
-    background: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+.score-board, .message-bar {
     color: white;
     padding: 10px 20px;
     text-align: center;
-    border-radius: 0;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
     width: 100%;
     z-index: 1000; /* Ensures it stays on top of other elements */
     display: flex;
     justify-content: center;
     align-items: center;
+    position: fixed;
+    left: 0;
+    border-radius: 15px; /* Added border-radius */
+}
+
+.score-board {
+    top: 0;
+    background: #59981A; /* Vibrant green background */
+}
+
+.message-bar {
+    bottom: 0;
+    background: #184B29; /* Primary color */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    color: #EAEDF0; /* Tertiary color for contrast */
+    padding-left: 20px; /* Added padding-left */
+    padding-right: 20px; /* Added padding-right */
+    align-items: center; /* Align items vertically */
 }
 
 .team {
@@ -61,6 +90,10 @@ body, html {
     justify-content: center;
     align-items: center;
     margin-top: 80px; /* Margin to prevent overlap with fixed score-board */
+    background: #184B29; /* Primary color */
+    color: #EAEDF0; /* Tertiary color for contrast */
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .stats {
@@ -82,7 +115,7 @@ body, html {
 
 .stat.central {
     flex: 2;
-    color: #FFD700;  /* Highlight for the central stat */
+    color: #B6BE52;  /* Secondary color for highlight */
     font-weight: bold;
 }
 
@@ -90,28 +123,30 @@ body, html {
     color: #ccc;  /* Lighter color for numeric stats */
 }
 
-.main-content {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    padding: 20px;
-}
-
 .match-timeline, .voice-comments, .message-live-time {
-    flex: 1;
-    margin: 10px 0;
-    background: white;
+    margin: 10px 20px;
+    background: #EAEDF0; /* Tertiary color */
     padding: 20px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.match-timeline {
+    background: #28a745; /* Vibrant green background */
+    color: #184B29; /* Primary color for text */
+}
+
+.voice-comments {
+    background: #28a745; /* Vibrant green background */
+    color: #184B29; /* Primary color for text */
 }
 
 .message-live-time {
+    background: #28a745; /* Vibrant green background */
+    color: #184B29; /* Primary color for text */
     overflow-y: auto;
     max-height: 150px;
-    margin-top: 20px;
-    background-color: #f9f9f9;
     padding: 10px;
-    border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -155,50 +190,69 @@ body, html {
     background-color: #d9d9d9;
 }
 
-.message-bar {
-    display: flex;
-    padding: 10px;
-    background: white;
-    align-items: center;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-}
-
 .message-bar input[type="text"] {
     flex: 1;
     padding: 10px;
     margin-right: 10px;
-    border: 2px solid #008080;
+    border: 2px solid #184B29; /* Primary color */
     border-radius: 5px;
+    background: #EAEDF0; /* Tertiary color */
+    color: #184B29; /* Primary color */
 }
 
 .record-btn, .send-btn {
-    background-color: #FFA500;
-    color: white;
+    background-color: #B6BE52; /* Secondary color */
+    color: #184B29; /* Primary color */
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
     margin-left: 5px;
+    border-radius: 15px; /* Added border-radius */
 }
 
 .record-btn:hover, .send-btn:hover {
-    background-color: #cc8400;
+    background-color: #a2a940;
 }
 
 .play-button {
-    background-color: #008080;
-    color: white;
+    background-color: #B6BE52; /* Secondary color */
+    color: #184B29; /* Primary color */
     border: none;
     padding: 5px 10px;
     border-radius: 3px;
     cursor: pointer;
+    border-radius: 15px; /* Added border-radius */
 }
 
 .play-button:hover {
-    background-color: #006060;
+    background-color: #a2a940;
+}
+
+@media (max-width: 1200px) {
+    .app-container {
+        width: 100%; /* 100% width for smaller screens */
+    }
+
+    .score-board, .message-bar {
+        width: 100%; /* Full width for smaller screens */
+        left: 0; /* Reset left alignment */
+    }
+
+    .ad {
+        display: none; /* Hide ads on smaller screens */
+    }
+}
+
+@media (min-width: 1201px) {
+    .app-container {
+        width: 70%; /* 70% width for larger screens */
+    }
+
+    .score-board, .message-bar {
+        width: 70%; /* Match width of app-container */
+        left: 15%; /* Center horizontally based on 70% width */
+    }
 }
 
 @media (max-width: 767px) {
