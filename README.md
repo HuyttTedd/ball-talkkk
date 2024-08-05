@@ -22,3 +22,6 @@ The Football Live Score App is designed for football enthusiasts who want to sta
    ```bash
    git clone https://github.com/yourusername/football-live-score-app.git
    cd football-live-score-app
+
+Main color:
+BG: #228B22
