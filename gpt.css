@@ -1,0 +1,276 @@
+/* styles.css */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: #EAEDF0;
+    color: #184B29;
+    overflow-x: hidden; /* Prevent horizontal overflow */
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.ad {
+    flex: 0 0 100px; /* Fixed width for ads */
+    background-color: #ddd; /* Placeholder color for ads */
+    margin: 10px;
+}
+
+.app-container {
+    display: flex;
+    flex-direction: column;
+    height: 150vh; /* Height set to 150vh */
+    padding-top: 100px; /* Padding to prevent overlap with fixed score-board */
+    padding-bottom: 60px; /* Padding to prevent overlap with fixed message-bar */
+    background: #EAEDF0;
+    width: 100%; /* Default width */
+    margin: 0 auto; /* Center horizontally */
+}
+
+.score-board, .message-bar {
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    z-index: 1000; /* Ensures it stays on top of other elements */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+}
+
+.score-board {
+    top: 0;
+    background: #28a745; /* Vibrant green background */
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.message-bar {
+    bottom: 0;
+    background: #184B29; /* Primary color */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    color: #EAEDF0; /* Tertiary color for contrast */
+    align-items: center; /* Align items vertically */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px; /* Added margin for spacing */
+}
+
+.team h2 {
+    font-size: 1.2em; /* Smaller font size */
+    margin: 0;
+}
+
+.score {
+    font-size: 2em; /* Smaller font size */
+    font-weight: bold;
+}
+
+.vs {
+    font-size: 1.5em; /* Smaller font size */
+    font-weight: bold;
+    margin: 0 60px; /* Added margin for spacing */
+}
+
+.stats-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px; /* Margin to prevent overlap with fixed score-board */
+    background: #184B29; /* Primary color */
+    color: #EAEDF0; /* Tertiary color for contrast */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.stats {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+.stat {
+    flex: 1;
+    text-align: center;
+    font-size: 1.2em; /* Smaller font size */
+}
+
+.stat.central {
+    flex: 2;
+    color: #B6BE52;  /* Secondary color for highlight */
+    font-weight: bold;
+}
+
+.stat.left, .stat.right {
+    color: #ccc;  /* Lighter color for numeric stats */
+}
+
+.match-timeline, .voice-comments, .message-live-time {
+    margin: 10px 20px;
+    background: #EAEDF0; /* Tertiary color */
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    border-radius: 5px;
+}
+
+.match-timeline {
+    background: #28a745; /* Vibrant green background */
+    color: #184B29; /* Primary color for text */
+}
+
+.voice-comments {
+    background: #28a745; /* Vibrant green background */
+    color: #184B29; /* Primary color for text */
+}
+
+.message-live-time {
+    background: #28a745; /* Vibrant green background */
+    color: #184B29; /* Primary color for text */
+    overflow-y: auto;
+    max-height: 150px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.message-live-time p {
+    margin: 0 0 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.message-live-time ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.message {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.message.user1 {
+    background-color: #e6f7ff;
+    color: #005c99;
+}
+
+.message.user2 {
+    background-color: #ffebcc;
+    color: #b36b00;
+}
+
+.message.my-message {
+    background-color: #d1e7dd;
+    color: #0f5132;
+    align-self: flex-end;
+    text-align: right;
+}
+
+.message:hover {
+    background-color: #d9d9d9;
+}
+
+.message-bar input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    margin: 5px;
+    border: 2px solid #184B29; /* Primary color */
+    border-radius: 5px;
+    background: #EAEDF0; /* Tertiary color */
+    color: #184B29; /* Primary color */
+}
+
+.record-btn, .send-btn {
+    background-color: #B6BE52; /* Secondary color */
+    color: #184B29; /* Primary color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5px 10px 5px;
+    border-radius: 5px; /* Added border-radius */
+}
+
+.record-btn:hover, .send-btn:hover {
+    background-color: #a2a940;
+}
+
+.play-button {
+    background-color: #B6BE52; /* Secondary color */
+    color: #184B29; /* Primary color */
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    border-radius: 5px; /* Added border-radius */
+}
+
+.play-button:hover {
+    background-color: #a2a940;
+}
+
+@media (max-width: 1200px) {
+    .app-container {
+        width: 100%; /* 100% width for smaller screens */
+    }
+
+    .score-board, .message-bar {
+        width: 100%; /* Full width for smaller screens */
+        left: 0; /* Reset left alignment */
+    }
+
+    .ad {
+        display: none; /* Hide ads on smaller screens */
+    }
+}
+
+@media (min-width: 1201px) {
+    .app-container {
+        width: 70%; /* 70% width for larger screens */
+    }
+
+    .score-board, .message-bar {
+        width: 70%; /* Match width of app-container */
+        left: 15%; /* Center horizontally based on 70% width */
+    }
+}
+
+@media (max-width: 767px) {
+    .team {
+        margin: 5px 0; /* Adjust margin for smaller screens */
+    }
+
+    .vs {
+        margin: 40px; /* Adjust margin for smaller screens */
+    }
+
+    .stats-container, .stats {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .message-live-time {
+        max-height: 200px;
+    }
+}
